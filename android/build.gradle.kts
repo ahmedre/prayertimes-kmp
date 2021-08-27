@@ -35,6 +35,8 @@ android {
 dependencies {
     implementation(project(":shared"))
     implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1")
 
     // jetpack compose
     implementation("androidx.activity:activity-compose:1.3.1")
