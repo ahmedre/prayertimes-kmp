@@ -1,11 +1,11 @@
 package app.salah.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import app.salah.Greeting
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import app.salah.Greeting
 
 fun greet(): String {
     return Greeting().greeting()

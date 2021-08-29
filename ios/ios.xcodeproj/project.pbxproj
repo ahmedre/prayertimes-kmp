@@ -40,7 +40,6 @@
 				5D6B2B790AAD3CE08F1C61DA /* Pods-ios.debug.xcconfig */,
 				340030D0BB6AD9D440345F63 /* Pods-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -65,6 +64,8 @@
 		7555FF7D242A565900829871 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				C154B63926DC0CB200DE7EED /* data */,
+				C154B63826DC0CAC00DE7EED /* view */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
@@ -78,6 +79,20 @@
 				A87EA021A87DC88D24E84DA1 /* Pods_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C154B63826DC0CAC00DE7EED /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C154B63926DC0CB200DE7EED /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
