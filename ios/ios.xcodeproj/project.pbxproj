@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		C19809A426DC2D8F0020A6EF /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */; };
+		C19809A626DC2F1F0020A6EF /* PrayerTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */; };
 		FE8206431C60C76A896B6A41 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87EA021A87DC88D24E84DA1 /* Pods_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +22,8 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A87EA021A87DC88D24E84DA1 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
+		C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		C154B63826DC0CAC00DE7EED /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		C154B63926DC0CB200DE7EED /* data */ = {
 			isa = PBXGroup;
 			children = (
+				C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19809A426DC2D8F0020A6EF /* PrayerTimesView.swift in Sources */,
+				C19809A626DC2F1F0020A6EF /* PrayerTimesRepository.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);

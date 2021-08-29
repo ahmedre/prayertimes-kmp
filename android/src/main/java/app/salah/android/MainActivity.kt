@@ -3,21 +3,32 @@ package app.salah.android
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import app.salah.Greeting
-
-fun greet(): String {
-    return Greeting().greeting()
-}
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.ExperimentalComposeUiApi
+import app.salah.android.data.PrayerTimesRepository
+import app.salah.android.view.PrayerTimesView
+import app.salah.android.view.SearchBar
 
 class MainActivity : AppCompatActivity() {
+    private val prayerTimesRepository = PrayerTimesRepository()
+
+    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
             MaterialTheme {
-                Text(text = greet())
+                val prayerTimesState = prayerTimesRepository.prayerTimesFlow.collectAsState()
+
+                Column {
+                    SearchBar(onLocationChanged = { prayerTimesRepository.search(it) })
+                    val prayerTimes = prayerTimesState.value
+                    if (prayerTimes != null) {
+                        PrayerTimesView(salahTimes = prayerTimes)
+                    }
+                }
             }
         }
     }
