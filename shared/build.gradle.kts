@@ -28,7 +28,7 @@ kotlin {
         podfile = project.file("../ios/Podfile")
     }
 
-    val ktorVersion = "1.6.2"
+    val ktorVersion = "1.6.3"
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -37,6 +37,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-json:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.2.2")
             }
         }
 
