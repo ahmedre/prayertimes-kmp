@@ -8,7 +8,7 @@ Kotlin Multiplatform
               /___/                                    /_/  /_/ 
 ```
 
-This is a sample PrayerTimes App with shared business logic written for a [talk](https://youtu.be/QaVVAYuVTe0) given for GDG MENA Digital Days.
+This is a sample PrayerTimes App with shared business logic written for a [talk](https://youtu.be/QaVVAYuVTe0) given for GDG MENA Digital Days on August 31st, 2021. The slide deck (10 slides, short since the talk was mostly live-coding) can be downloaded from [here](https://helw.dev/misc/kmp_prayertimes_slides-08.31.2021.pdf).
 
 It uses the `kotlin_multiplatform` branch of [adhan](https://github.com/batoulapps/adhan-java/tree/kotlin_multiplatform) for shared PrayerTime calculation logic.
 
