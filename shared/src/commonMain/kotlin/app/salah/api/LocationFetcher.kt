@@ -3,16 +3,16 @@ package app.salah.api
 import app.salah.GOOGLE_API_KEY
 import app.salah.model.Location
 import io.ktor.client.HttpClient
-import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.plugins.ContentNegotiation
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
 class LocationFetcher {
     private val httpClient = HttpClient {
-        install(JsonFeature) {
-            serializer = KotlinxSerializer(Json { isLenient = true; ignoreUnknownKeys = true })
+        install(ContentNegotiation) {
+            json(Json { isLenient = true; ignoreUnknownKeys = true })
         }
     }
     private val geocodingApi = GeocodingApi(httpClient, GOOGLE_API_KEY)

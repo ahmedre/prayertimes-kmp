@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.collectAsState
-import androidx.compose.ui.ExperimentalComposeUiApi
 import app.salah.android.data.PrayerTimesRepository
 import app.salah.android.view.PrayerTimesView
 import app.salah.android.view.SearchBar
@@ -14,7 +13,6 @@ import app.salah.android.view.SearchBar
 class MainActivity : AppCompatActivity() {
     private val prayerTimesRepository = PrayerTimesRepository()
 
-    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
