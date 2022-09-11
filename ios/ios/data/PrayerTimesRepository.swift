@@ -18,7 +18,9 @@ class PrayerTimesRespository: ObservableObject {
                                          completionHandler:
                                             { result, error in
                                                 if let actualResult = result {
+                                                  DispatchQueue.main.async {
                                                     self.result = actualResult
+                                                  }
                                                 }
                                             })
     }
