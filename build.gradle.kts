@@ -17,7 +17,3 @@ allprojects {
     mavenLocal()
   }
 }
-
-tasks.register("clean", Delete::class) {
-  delete(rootProject.buildDir)
-}

@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
@@ -12,13 +10,8 @@ version = "1.0"
 kotlin {
   android()
 
-  // taken from PeopleInSpace
-  val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
-    System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
-    System.getenv("NATIVE_ARCH")?.startsWith("arm") == true -> ::iosSimulatorArm64
-    else -> ::iosX64
-  }
-  iosTarget("ios") {}
+  ios()
+  iosSimulatorArm64()
 
   cocoapods {
     summary = "Some description for the Shared Module"
@@ -29,7 +22,7 @@ kotlin {
   sourceSets {
     val commonMain by getting {
       dependencies {
-        implementation("com.batoulapps.adhan:adhan2:0.0.3")
+        implementation("com.batoulapps.adhan:adhan2:0.0.4")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
@@ -37,8 +30,6 @@ kotlin {
         implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
         implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
         implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
-        // Temporarily needed until adhan2 updates to a newer kotlinx-datetime
-        implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
       }
     }
 
@@ -64,11 +55,14 @@ kotlin {
 
     val iosMain by getting {
       dependencies {
-        implementation("io.ktor:ktor-client-ios:$ktorVersion")
+        implementation("io.ktor:ktor-client-darwin:$ktorVersion")
       }
     }
 
     val iosTest by getting
+
+    val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
+    val iosSimulatorArm64Test by getting { dependsOn(iosTest) }
   }
 }
 
