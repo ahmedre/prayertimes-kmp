@@ -11,23 +11,23 @@ import app.salah.android.view.PrayerTimesView
 import app.salah.android.view.SearchBar
 
 class MainActivity : AppCompatActivity() {
-    private val prayerTimesRepository = PrayerTimesRepository()
+  private val prayerTimesRepository = PrayerTimesRepository()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
 
-        setContent {
-            MaterialTheme {
-                val prayerTimesState = prayerTimesRepository.prayerTimesFlow.collectAsState()
+    setContent {
+      MaterialTheme {
+        val prayerTimesState = prayerTimesRepository.prayerTimesFlow.collectAsState()
 
-                Column {
-                    SearchBar(onLocationChanged = { prayerTimesRepository.search(it) })
-                    val prayerTimes = prayerTimesState.value
-                    if (prayerTimes != null) {
-                        PrayerTimesView(salahTimes = prayerTimes)
-                    }
-                }
-            }
+        Column {
+          SearchBar(onLocationChanged = { prayerTimesRepository.search(it) })
+          val prayerTimes = prayerTimesState.value
+          if (prayerTimes != null) {
+            PrayerTimesView(salahTimes = prayerTimes)
+          }
         }
+      }
     }
+  }
 }

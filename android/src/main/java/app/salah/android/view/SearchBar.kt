@@ -19,33 +19,33 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun SearchBar(onLocationChanged: (String) -> Unit) {
-    val textState = remember { mutableStateOf("") }
-    TextField(
-        value = textState.value,
-        label = {
-            Text("Enter a Location")
-        },
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-        keyboardActions = KeyboardActions { onLocationChanged(textState.value) },
-        onValueChange = { textState.value = it },
-        modifier = Modifier
-            .onPreviewKeyEvent { keyEvent ->
-                if (keyEvent.key.keyCode == Key.Enter.keyCode) {
-                    if (keyEvent.type == KeyEventType.KeyUp) {
-                        onLocationChanged(textState.value)
-                    }
-                    true
-                } else {
-                    false
+  val textState = remember { mutableStateOf("") }
+  TextField(
+    value = textState.value,
+    label = {
+      Text("Enter a Location")
+    },
+    singleLine = true,
+    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+    keyboardActions = KeyboardActions { onLocationChanged(textState.value) },
+    onValueChange = { textState.value = it },
+    modifier = Modifier
+        .onPreviewKeyEvent { keyEvent ->
+            if (keyEvent.key.keyCode == Key.Enter.keyCode) {
+                if (keyEvent.type == KeyEventType.KeyUp) {
+                    onLocationChanged(textState.value)
                 }
+                true
+            } else {
+                false
             }
-            .fillMaxWidth()
-    )
+        }
+        .fillMaxWidth()
+  )
 }
 
 @Preview
 @Composable
 fun SearchBarPreview() {
-    SearchBar {}
+  SearchBar {}
 }

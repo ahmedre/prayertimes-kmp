@@ -10,18 +10,18 @@ import Foundation
 import shared
 
 class PrayerTimesRespository: ObservableObject {
-    @Published var result: SalahTimes? = nil
-    private let salahCalculator = SalahCalculator()
-
-    func search(name: String) {
-        self.salahCalculator.prayerTimes(placeName: name,
-                                         completionHandler:
-                                            { result, error in
-                                                if let actualResult = result {
-                                                  DispatchQueue.main.async {
-                                                    self.result = actualResult
-                                                  }
-                                                }
-                                            })
-    }
+  @Published var result: SalahTimes? = nil
+  private let salahCalculator = SalahCalculator()
+  
+  func search(name: String) {
+    self.salahCalculator.prayerTimes(placeName: name,
+                                     completionHandler:
+                                      { result, error in
+      if let actualResult = result {
+        DispatchQueue.main.async {
+          self.result = actualResult
+        }
+      }
+    })
+  }
 }

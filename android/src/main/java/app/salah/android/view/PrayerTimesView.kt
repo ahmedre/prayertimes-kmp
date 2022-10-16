@@ -10,12 +10,12 @@ import app.salah.model.SalahTimes
 
 @Composable
 fun PrayerTimesView(salahTimes: SalahTimes) {
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(salahTimes.name)
-        Text(salahTimes.fajr)
-        Text(salahTimes.dhuhr)
-        Text(salahTimes.asr)
-        Text(salahTimes.maghrib)
-        Text(salahTimes.isha)
-    }
+  Column(modifier = Modifier.padding(16.dp)) {
+    Text(salahTimes.name)
+    Text(salahTimes.fajr)
+    Text(salahTimes.dhuhr)
+    Text(salahTimes.asr)
+    Text(salahTimes.maghrib)
+    Text(salahTimes.isha)
+  }
 }

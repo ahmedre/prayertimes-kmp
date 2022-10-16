@@ -8,14 +8,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class PrayerTimesRepository {
-    private val _prayerTimesFlow = MutableStateFlow<SalahTimes?>(null)
-    val prayerTimesFlow = _prayerTimesFlow.asStateFlow()
-    private val salahCalculator = SalahCalculator()
-    private val scope = MainScope()
+  private val _prayerTimesFlow = MutableStateFlow<SalahTimes?>(null)
+  val prayerTimesFlow = _prayerTimesFlow.asStateFlow()
+  private val salahCalculator = SalahCalculator()
+  private val scope = MainScope()
 
-    fun search(location: String) {
-        scope.launch {
-            _prayerTimesFlow.value = salahCalculator.prayerTimes(location)
-        }
+  fun search(location: String) {
+    scope.launch {
+      _prayerTimesFlow.value = salahCalculator.prayerTimes(location)
     }
+  }
 }

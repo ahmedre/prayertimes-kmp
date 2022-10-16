@@ -9,20 +9,20 @@ import io.ktor.client.request.parameter
 import kotlinx.datetime.Clock
 
 class GeocodingApi(private val httpClient: HttpClient, private val apiKey: String) {
-    private val baseUrl = "https://maps.googleapis.com/maps/api/geocode/json"
+  private val baseUrl = "https://maps.googleapis.com/maps/api/geocode/json"
 
-    suspend fun geocode(name: String): GeocodingResult =
-        httpClient.get(baseUrl) {
-            parameter("address", name)
-            parameter("key", apiKey)
-        }.body()
+  suspend fun geocode(name: String): GeocodingResult =
+    httpClient.get(baseUrl) {
+      parameter("address", name)
+      parameter("key", apiKey)
+    }.body()
 
-    private val timeBaseUrl = "https://maps.googleapis.com/maps/api/timezone/json"
+  private val timeBaseUrl = "https://maps.googleapis.com/maps/api/timezone/json"
 
-    suspend fun timezone(latitude: Double, longitude: Double): TimezoneModel =
-        httpClient.get(timeBaseUrl) {
-            parameter("location", "$latitude,$longitude")
-            parameter("timestamp", Clock.System.now().epochSeconds)
-            parameter("key", apiKey)
-        }.body()
+  suspend fun timezone(latitude: Double, longitude: Double): TimezoneModel =
+    httpClient.get(timeBaseUrl) {
+      parameter("location", "$latitude,$longitude")
+      parameter("timestamp", Clock.System.now().epochSeconds)
+      parameter("key", apiKey)
+    }.body()
 }
