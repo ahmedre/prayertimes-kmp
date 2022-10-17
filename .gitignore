@@ -9,5 +9,5 @@
 .externalNativeBuild
 .cxx
 local.properties
-ios/Pods
+apple/Pods
 xcuserdata/
