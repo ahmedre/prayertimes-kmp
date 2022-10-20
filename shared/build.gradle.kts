@@ -1,14 +1,13 @@
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
-  id("com.android.library")
   kotlin("plugin.serialization") version "1.7.10"
 }
 
 version = "1.0"
 
 kotlin {
-  android()
+  jvm()
 
   ios()
   iosSimulatorArm64()
@@ -40,13 +39,13 @@ kotlin {
       }
     }
 
-    val androidMain by getting {
+    val jvmMain by getting {
       dependencies {
         implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
       }
     }
 
-    val androidTest by getting {
+    val jvmTest by getting {
       dependencies {
         implementation(kotlin("test-junit"))
         implementation("junit:junit:4.13.2")
@@ -63,14 +62,5 @@ kotlin {
 
     val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
     val iosSimulatorArm64Test by getting { dependsOn(iosTest) }
-  }
-}
-
-android {
-  compileSdk = 31
-  sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-  defaultConfig {
-    minSdk = 21
-    targetSdk = 31
   }
 }

@@ -1,4 +1,4 @@
-package app.salah.android.data
+package app.salah.data
 
 import app.salah.calculator.SalahCalculator
 import app.salah.model.SalahTimes
