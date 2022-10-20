@@ -9,6 +9,11 @@ version = "1.0"
 kotlin {
   jvm()
 
+  js(IR) {
+    useCommonJs()
+    browser()
+  }
+
   ios()
   iosSimulatorArm64()
 
@@ -52,6 +57,13 @@ kotlin {
       }
     }
 
+    val jsMain by getting {
+      dependencies {
+        implementation(npm("@js-joda/timezone", "2.3.0"))
+        implementation("io.ktor:ktor-client-js:$ktorVersion")
+      }
+    }
+
     val iosMain by getting {
       dependencies {
         implementation("io.ktor:ktor-client-darwin:$ktorVersion")
@@ -62,5 +74,11 @@ kotlin {
 
     val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
     val iosSimulatorArm64Test by getting { dependsOn(iosTest) }
+  }
+
+  // move kotlin-js-store directory under web-compose so it's not on the top level
+  rootProject.plugins.withType<org.jetbrains.kotlin.gradle.targets.js.yarn.YarnPlugin> {
+    rootProject.the<org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension>().lockFileDirectory =
+      project.rootDir.resolve("web-compose/kotlin-js-store")
   }
 }
