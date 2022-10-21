@@ -1,5 +1,6 @@
 plugins {
   kotlin("multiplatform")
+  kotlin("native.cocoapods")
   id("com.android.library")
   id("org.jetbrains.compose") version "1.2.0"
 }
@@ -9,6 +10,21 @@ version = "1.0"
 kotlin {
   jvm()
   android()
+
+  ios()
+  iosSimulatorArm64()
+
+  cocoapods {
+    summary = "Some description for the Renderer Module"
+    homepage = "Link to the Renderer Module homepage"
+  }
+
+  // disable checks due to compose iOS issues with LLVM in the current version
+  targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+    binaries.all {
+      freeCompilerArgs = freeCompilerArgs + "-Xdisable-phases=VerifyBitcode"
+    }
+  }
 
   sourceSets {
     val commonMain by getting {
@@ -27,6 +43,9 @@ kotlin {
         implementation(kotlin("test-annotations-common"))
       }
     }
+
+    val iosMain by getting
+    val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
   }
 }
 

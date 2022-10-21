@@ -5,7 +5,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import app.salah.data.PrayerTimesRepository
-import app.salah.view.PrayerTimesWrapper
+import app.salah.view.PrayerTimesWrapperProvider
 
 fun main() = application {
   val prayerTimesRepository = PrayerTimesRepository()
@@ -15,6 +15,6 @@ fun main() = application {
     title = "PrayerTimes for Desktop",
     state = rememberWindowState(width = 300.dp, height = 300.dp)
   ) {
-    PrayerTimesWrapper(prayerTimesRepository)
+    PrayerTimesWrapperProvider.providePrayerTimesWrapper(prayerTimesRepository)
   }
 }

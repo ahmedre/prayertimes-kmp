@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import app.salah.model.SalahTimes
 
 @Composable
-fun PrayerTimesView(salahTimes: SalahTimes) {
+internal fun PrayerTimesView(salahTimes: SalahTimes) {
   Column(modifier = Modifier.padding(16.dp)) {
     Text(salahTimes.name)
     Text(salahTimes.fajr)
