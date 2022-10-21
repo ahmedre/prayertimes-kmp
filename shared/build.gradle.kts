@@ -17,7 +17,16 @@ kotlin {
   ios()
   iosSimulatorArm64()
 
-  macosArm64()
+  val hostOs = System.getProperty("os.name")
+  val nativeTarget = when {
+    hostOs == "Mac OS X" -> macosArm64()
+    hostOs == "Linux" -> linuxX64("nonAppleNative")
+    hostOs.startsWith("Windows") -> mingwX64("nonAppleNative")
+    else -> null
+  }
+  val isNonApple = hostOs != null && hostOs != "Mac OS X"
+
+  nativeTarget?.binaries?.executable { entryPoint = "main" }
 
   watchos()
   watchosSimulatorArm64()
@@ -69,8 +78,12 @@ kotlin {
       }
     }
 
-    val appleMain by creating {
+    val nativeMain by creating {
       dependsOn(commonMain)
+    }
+
+    val appleMain by creating {
+      dependsOn(nativeMain)
       dependencies {
         implementation("io.ktor:ktor-client-darwin:$ktorVersion")
       }
@@ -80,14 +93,23 @@ kotlin {
       dependsOn(commonTest)
     }
 
+    if (isNonApple) {
+      val nonAppleNativeMain by getting {
+        dependsOn(nativeMain)
+        dependencies {
+          implementation("io.ktor:ktor-client-curl:$ktorVersion")
+        }
+      }
+    } else {
+      val macosArm64Main by getting { dependsOn(appleMain) }
+      val macosArm64Test by getting { dependsOn(appleTest) }
+    }
+
     val iosMain by getting { dependsOn(appleMain) }
     val iosTest by getting { dependsOn(appleTest) }
 
     val iosSimulatorArm64Main by getting { dependsOn(appleMain) }
     val iosSimulatorArm64Test by getting { dependsOn(appleTest) }
-
-    val macosArm64Main by getting { dependsOn(appleMain) }
-    val macosArm64Test by getting { dependsOn(appleTest) }
 
     val watchosMain by getting { dependsOn(appleMain) }
     val watchosTest by getting { dependsOn(appleTest) }
