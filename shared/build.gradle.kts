@@ -17,6 +17,8 @@ kotlin {
   ios()
   iosSimulatorArm64()
 
+  macosArm64()
+
   cocoapods {
     summary = "Some description for the Shared Module"
     homepage = "Link to the Shared Module homepage"
@@ -64,16 +66,25 @@ kotlin {
       }
     }
 
-    val iosMain by getting {
+    val appleMain by creating {
+      dependsOn(commonMain)
       dependencies {
         implementation("io.ktor:ktor-client-darwin:$ktorVersion")
       }
     }
 
-    val iosTest by getting
+    val appleTest by creating {
+      dependsOn(commonTest)
+    }
 
-    val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
-    val iosSimulatorArm64Test by getting { dependsOn(iosTest) }
+    val iosMain by getting { dependsOn(appleMain) }
+    val iosTest by getting { dependsOn(appleTest) }
+
+    val iosSimulatorArm64Main by getting { dependsOn(appleMain) }
+    val iosSimulatorArm64Test by getting { dependsOn(appleTest) }
+
+    val macosArm64Main by getting { dependsOn(appleMain) }
+    val macosArm64Test by getting { dependsOn(appleTest) }
   }
 
   // move kotlin-js-store directory under web-compose so it's not on the top level

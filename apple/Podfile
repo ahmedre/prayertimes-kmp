@@ -3,3 +3,8 @@ target 'ios' do
   platform :ios, '14.1'
   pod 'shared', :path => '../shared'
 end
+
+target 'osx' do
+  platform :osx, '12.6'
+  pod 'shared', :path => '../shared'
+end
