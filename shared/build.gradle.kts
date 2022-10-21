@@ -19,6 +19,9 @@ kotlin {
 
   macosArm64()
 
+  watchos()
+  watchosSimulatorArm64()
+
   cocoapods {
     summary = "Some description for the Shared Module"
     homepage = "Link to the Shared Module homepage"
@@ -85,6 +88,11 @@ kotlin {
 
     val macosArm64Main by getting { dependsOn(appleMain) }
     val macosArm64Test by getting { dependsOn(appleTest) }
+
+    val watchosMain by getting { dependsOn(appleMain) }
+    val watchosTest by getting { dependsOn(appleTest) }
+    val watchosSimulatorArm64Main by getting { dependsOn(appleMain) }
+    val watchosSimulatorArm64Test by getting { dependsOn(appleTest) }
   }
 
   // move kotlin-js-store directory under web-compose so it's not on the top level

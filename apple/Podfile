@@ -8,3 +8,8 @@ target 'osx' do
   platform :osx, '12.6'
   pod 'shared', :path => '../shared'
 end
+
+target 'SalahTimes Watch App' do
+  platform :watchos, '9.0'
+  pod 'shared', :path => '../shared'
+end
