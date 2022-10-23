@@ -1,16 +1,21 @@
 PODS:
+  - renderer (1.0)
   - shared (1.0)
 
 DEPENDENCIES:
+  - renderer (from `../renderer`)
   - shared (from `../shared`)
 
 EXTERNAL SOURCES:
+  renderer:
+    :path: "../renderer"
   shared:
     :path: "../shared"
 
 SPEC CHECKSUMS:
+  renderer: 2cb6898319d96f946b7699bfdf469d3ec2df430f
   shared: 5021ad07658e143784d78141f605b830b904dfe7
 
-PODFILE CHECKSUM: 1ba1c1f03a33aead72248833db9c6a3e45ab815d
+PODFILE CHECKSUM: 860e8f889b401e11f8908babb058660ae748c16f
 
 COCOAPODS: 1.11.3

@@ -8,25 +8,116 @@
 
 /* Begin PBXBuildFile section */
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		543B32F25674FF0CA038D1AF /* libPods-SalahTimes Watch App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4FECF4AEC186E0D9FA106D /* libPods-SalahTimes Watch App.a */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		B5BDDD706910AE7A68AC0A06 /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5D2A98C238DFAA71A524F2 /* libPods-osx.a */; };
+		C157A44E2902196000CD5319 /* osxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157A44D2902196000CD5319 /* osxApp.swift */; };
+		C157A4522902196100CD5319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C157A4512902196100CD5319 /* Assets.xcassets */; };
+		C157A4552902196100CD5319 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C157A4542902196100CD5319 /* Preview Assets.xcassets */; };
+		C157A45B2902198900CD5319 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */; };
+		C157A45C2902198900CD5319 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		C157A45D2902198900CD5319 /* PrayerTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */; };
+		C157A466290219F500CD5319 /* SalahTimes Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C157A465290219F500CD5319 /* SalahTimes Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C157A46B290219F500CD5319 /* SalahTimesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157A46A290219F500CD5319 /* SalahTimesApp.swift */; };
+		C157A46F290219F600CD5319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C157A46E290219F600CD5319 /* Assets.xcassets */; };
+		C157A472290219F600CD5319 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C157A471290219F600CD5319 /* Preview Assets.xcassets */; };
+		C157A47A29021A2E00CD5319 /* PrayerTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */; };
+		C157A47B29021A2E00CD5319 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */; };
+		C157A47C29021A2E00CD5319 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		C157A48429021BEC00CD5319 /* ios_composeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157A48329021BEC00CD5319 /* ios_composeApp.swift */; };
+		C157A48829021BEC00CD5319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C157A48729021BEC00CD5319 /* Assets.xcassets */; };
+		C157A48B29021BEC00CD5319 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C157A48A29021BEC00CD5319 /* Preview Assets.xcassets */; };
 		C19809A426DC2D8F0020A6EF /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */; };
 		C19809A626DC2F1F0020A6EF /* PrayerTimesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */; };
 		FE8206431C60C76A896B6A41 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87EA021A87DC88D24E84DA1 /* Pods_ios.framework */; };
+		FFB5FAC4C01DF06FF957FA1B /* Pods_ios_compose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E207E98D98435FEA2BD0C50 /* Pods_ios_compose.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C157A467290219F500CD5319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7555FF73242A565900829871 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C157A464290219F500CD5319;
+			remoteInfo = "SalahTimes Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C157A476290219F600CD5319 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C157A466290219F500CD5319 /* SalahTimes Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		340030D0BB6AD9D440345F63 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		3CAAA9B035417720C55C53B8 /* Pods-ios-compose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-compose.debug.xcconfig"; path = "Target Support Files/Pods-ios-compose/Pods-ios-compose.debug.xcconfig"; sourceTree = "<group>"; };
+		5C5D2A98C238DFAA71A524F2 /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6B2B790AAD3CE08F1C61DA /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		5FB62DFEADCAA5C3542A1D9C /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
+		5FD854BB10281F51EB44477F /* Pods-SalahTimes Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalahTimes Watch App.debug.xcconfig"; path = "Target Support Files/Pods-SalahTimes Watch App/Pods-SalahTimes Watch App.debug.xcconfig"; sourceTree = "<group>"; };
+		6E13FF87E275EDF5E837650B /* Pods-SalahTimes Watch App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalahTimes Watch App.release.xcconfig"; path = "Target Support Files/Pods-SalahTimes Watch App/Pods-SalahTimes Watch App.release.xcconfig"; sourceTree = "<group>"; };
+		6E207E98D98435FEA2BD0C50 /* Pods_ios_compose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_compose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7B242A565900829871 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F97A1B5141CEC32EE84980B /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
 		A87EA021A87DC88D24E84DA1 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C157A44B2902196000CD5319 /* osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C157A44D2902196000CD5319 /* osxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = osxApp.swift; sourceTree = "<group>"; };
+		C157A4512902196100CD5319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C157A4542902196100CD5319 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C157A4562902196100CD5319 /* osx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = osx.entitlements; sourceTree = "<group>"; };
+		C157A460290219F500CD5319 /* SalahTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalahTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C157A465290219F500CD5319 /* SalahTimes Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SalahTimes Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C157A46A290219F500CD5319 /* SalahTimesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahTimesApp.swift; sourceTree = "<group>"; };
+		C157A46E290219F600CD5319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C157A471290219F600CD5319 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C157A48129021BEC00CD5319 /* ios-compose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-compose.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C157A48329021BEC00CD5319 /* ios_composeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_composeApp.swift; sourceTree = "<group>"; };
+		C157A48729021BEC00CD5319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C157A48A29021BEC00CD5319 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C157A48F29021C0100CD5319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C19809A326DC2D8F0020A6EF /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
 		C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesRepository.swift; sourceTree = "<group>"; };
+		CD4FECF4AEC186E0D9FA106D /* libPods-SalahTimes Watch App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalahTimes Watch App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C852110B66E0AAFA2CFF4C /* Pods-ios-compose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-compose.release.xcconfig"; path = "Target Support Files/Pods-ios-compose/Pods-ios-compose.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C157A4482902196000CD5319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BDDD706910AE7A68AC0A06 /* libPods-osx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A462290219F500CD5319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				543B32F25674FF0CA038D1AF /* libPods-SalahTimes Watch App.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A47E29021BEC00CD5319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB5FAC4C01DF06FF957FA1B /* Pods_ios_compose.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7A91D059DBF187CCE558BEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +134,12 @@
 			children = (
 				5D6B2B790AAD3CE08F1C61DA /* Pods-ios.debug.xcconfig */,
 				340030D0BB6AD9D440345F63 /* Pods-ios.release.xcconfig */,
+				7F97A1B5141CEC32EE84980B /* Pods-osx.debug.xcconfig */,
+				5FB62DFEADCAA5C3542A1D9C /* Pods-osx.release.xcconfig */,
+				5FD854BB10281F51EB44477F /* Pods-SalahTimes Watch App.debug.xcconfig */,
+				6E13FF87E275EDF5E837650B /* Pods-SalahTimes Watch App.release.xcconfig */,
+				3CAAA9B035417720C55C53B8 /* Pods-ios-compose.debug.xcconfig */,
+				E6C852110B66E0AAFA2CFF4C /* Pods-ios-compose.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -51,6 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				7555FF7D242A565900829871 /* ios */,
+				C157A44C2902196000CD5319 /* osx */,
+				C157A469290219F500CD5319 /* SalahTimes Watch App */,
+				C157A45A2902197C00CD5319 /* Shared */,
+				C157A48229021BEC00CD5319 /* ios-compose */,
 				7555FF7C242A565900829871 /* Products */,
 				4B4727B780C57A6C877BBADF /* Pods */,
 				8CF5F97D8E53AB0ADFDD6800 /* Frameworks */,
@@ -61,6 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				7555FF7B242A565900829871 /* ios.app */,
+				C157A44B2902196000CD5319 /* osx.app */,
+				C157A460290219F500CD5319 /* SalahTimes.app */,
+				C157A465290219F500CD5319 /* SalahTimes Watch App.app */,
+				C157A48129021BEC00CD5319 /* ios-compose.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,9 +173,6 @@
 		7555FF7D242A565900829871 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				C154B63926DC0CB200DE7EED /* data */,
-				C154B63826DC0CAC00DE7EED /* view */,
-				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 			);
@@ -81,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				A87EA021A87DC88D24E84DA1 /* Pods_ios.framework */,
+				5C5D2A98C238DFAA71A524F2 /* libPods-osx.a */,
+				CD4FECF4AEC186E0D9FA106D /* libPods-SalahTimes Watch App.a */,
+				6E207E98D98435FEA2BD0C50 /* Pods_ios_compose.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,6 +204,72 @@
 				C19809A526DC2F1F0020A6EF /* PrayerTimesRepository.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		C157A44C2902196000CD5319 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				C157A44D2902196000CD5319 /* osxApp.swift */,
+				C157A4512902196100CD5319 /* Assets.xcassets */,
+				C157A4562902196100CD5319 /* osx.entitlements */,
+				C157A4532902196100CD5319 /* Preview Content */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		C157A4532902196100CD5319 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C157A4542902196100CD5319 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C157A45A2902197C00CD5319 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C154B63926DC0CB200DE7EED /* data */,
+				C154B63826DC0CAC00DE7EED /* view */,
+				7555FF82242A565900829871 /* ContentView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C157A469290219F500CD5319 /* SalahTimes Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				C157A46A290219F500CD5319 /* SalahTimesApp.swift */,
+				C157A46E290219F600CD5319 /* Assets.xcassets */,
+				C157A470290219F600CD5319 /* Preview Content */,
+			);
+			path = "SalahTimes Watch App";
+			sourceTree = "<group>";
+		};
+		C157A470290219F600CD5319 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C157A471290219F600CD5319 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C157A48229021BEC00CD5319 /* ios-compose */ = {
+			isa = PBXGroup;
+			children = (
+				C157A48F29021C0100CD5319 /* Info.plist */,
+				C157A48329021BEC00CD5319 /* ios_composeApp.swift */,
+				C157A48729021BEC00CD5319 /* Assets.xcassets */,
+				C157A48929021BEC00CD5319 /* Preview Content */,
+			);
+			path = "ios-compose";
+			sourceTree = "<group>";
+		};
+		C157A48929021BEC00CD5319 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C157A48A29021BEC00CD5319 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,18 +293,101 @@
 			productReference = 7555FF7B242A565900829871 /* ios.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C157A44A2902196000CD5319 /* osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C157A4592902196100CD5319 /* Build configuration list for PBXNativeTarget "osx" */;
+			buildPhases = (
+				8FE8D80C585C8F92A166FB72 /* [CP] Check Pods Manifest.lock */,
+				C157A4472902196000CD5319 /* Sources */,
+				C157A4482902196000CD5319 /* Frameworks */,
+				C157A4492902196000CD5319 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = osx;
+			productName = osx;
+			productReference = C157A44B2902196000CD5319 /* osx.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C157A45F290219F500CD5319 /* SalahTimes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C157A477290219F600CD5319 /* Build configuration list for PBXNativeTarget "SalahTimes" */;
+			buildPhases = (
+				C157A45E290219F500CD5319 /* Resources */,
+				C157A476290219F600CD5319 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C157A468290219F500CD5319 /* PBXTargetDependency */,
+			);
+			name = SalahTimes;
+			productName = SalahTimes;
+			productReference = C157A460290219F500CD5319 /* SalahTimes.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		C157A464290219F500CD5319 /* SalahTimes Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C157A473290219F600CD5319 /* Build configuration list for PBXNativeTarget "SalahTimes Watch App" */;
+			buildPhases = (
+				5CEE38BCCA2A83F2AC96FDDC /* [CP] Check Pods Manifest.lock */,
+				C157A461290219F500CD5319 /* Sources */,
+				C157A462290219F500CD5319 /* Frameworks */,
+				C157A463290219F500CD5319 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SalahTimes Watch App";
+			productName = "SalahTimes Watch App";
+			productReference = C157A465290219F500CD5319 /* SalahTimes Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C157A48029021BEC00CD5319 /* ios-compose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C157A48C29021BEC00CD5319 /* Build configuration list for PBXNativeTarget "ios-compose" */;
+			buildPhases = (
+				31BD4710D2D32B533229D201 /* [CP] Check Pods Manifest.lock */,
+				C157A47D29021BEC00CD5319 /* Sources */,
+				C157A47E29021BEC00CD5319 /* Frameworks */,
+				C157A47F29021BEC00CD5319 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-compose";
+			productName = "ios-compose";
+			productReference = C157A48129021BEC00CD5319 /* ios-compose.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7555FF73242A565900829871 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = orgName;
 				TargetAttributes = {
 					7555FF7A242A565900829871 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					C157A44A2902196000CD5319 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					C157A45F290219F500CD5319 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					C157A464290219F500CD5319 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					C157A48029021BEC00CD5319 = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
@@ -151,6 +405,10 @@
 			projectRoot = "";
 			targets = (
 				7555FF7A242A565900829871 /* ios */,
+				C157A44A2902196000CD5319 /* osx */,
+				C157A45F290219F500CD5319 /* SalahTimes */,
+				C157A464290219F500CD5319 /* SalahTimes Watch App */,
+				C157A48029021BEC00CD5319 /* ios-compose */,
 			);
 		};
 /* End PBXProject section */
@@ -163,9 +421,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C157A4492902196000CD5319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C157A4552902196100CD5319 /* Preview Assets.xcassets in Resources */,
+				C157A4522902196100CD5319 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A45E290219F500CD5319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A463290219F500CD5319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C157A472290219F600CD5319 /* Preview Assets.xcassets in Resources */,
+				C157A46F290219F600CD5319 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A47F29021BEC00CD5319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C157A48B29021BEC00CD5319 /* Preview Assets.xcassets in Resources */,
+				C157A48829021BEC00CD5319 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31BD4710D2D32B533229D201 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-compose-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5801ADFB465BE526500A0013 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,6 +502,50 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5CEE38BCCA2A83F2AC96FDDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SalahTimes Watch App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FE8D80C585C8F92A166FB72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-osx-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -202,7 +560,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C157A4472902196000CD5319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C157A45B2902198900CD5319 /* PrayerTimesView.swift in Sources */,
+				C157A45D2902198900CD5319 /* PrayerTimesRepository.swift in Sources */,
+				C157A45C2902198900CD5319 /* ContentView.swift in Sources */,
+				C157A44E2902196000CD5319 /* osxApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A461290219F500CD5319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C157A47B29021A2E00CD5319 /* PrayerTimesView.swift in Sources */,
+				C157A46B290219F500CD5319 /* SalahTimesApp.swift in Sources */,
+				C157A47C29021A2E00CD5319 /* ContentView.swift in Sources */,
+				C157A47A29021A2E00CD5319 /* PrayerTimesRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C157A47D29021BEC00CD5319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C157A48429021BEC00CD5319 /* ios_composeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C157A468290219F500CD5319 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C157A464290219F500CD5319 /* SalahTimes Watch App */;
+			targetProxy = C157A467290219F500CD5319 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7555FFA3242A565B00829871 /* Debug */ = {
@@ -359,6 +755,222 @@
 			};
 			name = Release;
 		};
+		C157A4572902196100CD5319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F97A1B5141CEC32EE84980B /* Pods-osx.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = osx/osx.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"osx/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 orgName. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.salah.osx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C157A4582902196100CD5319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FB62DFEADCAA5C3542A1D9C /* Pods-osx.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = osx/osx.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"osx/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 orgName. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.salah.osx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C157A474290219F600CD5319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD854BB10281F51EB44477F /* Pods-SalahTimes Watch App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"SalahTimes Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SalahTimes;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.salah.SalahTimes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C157A475290219F600CD5319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E13FF87E275EDF5E837650B /* Pods-SalahTimes Watch App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SalahTimes Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SalahTimes;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.salah.SalahTimes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		C157A478290219F600CD5319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_KEY_CFBundleDisplayName = SalahTimes;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.salah.SalahTimes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C157A479290219F600CD5319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = SalahTimes;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.salah.SalahTimes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C157A48D29021BEC00CD5319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CAAA9B035417720C55C53B8 /* Pods-ios-compose.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"ios-compose/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-compose/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.salah.ios-compose";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C157A48E29021BEC00CD5319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C852110B66E0AAFA2CFF4C /* Pods-ios-compose.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ios-compose/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-compose/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.salah.ios-compose";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -376,6 +988,42 @@
 			buildConfigurations = (
 				7555FFA6242A565B00829871 /* Debug */,
 				7555FFA7242A565B00829871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C157A4592902196100CD5319 /* Build configuration list for PBXNativeTarget "osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C157A4572902196100CD5319 /* Debug */,
+				C157A4582902196100CD5319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C157A473290219F600CD5319 /* Build configuration list for PBXNativeTarget "SalahTimes Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C157A474290219F600CD5319 /* Debug */,
+				C157A475290219F600CD5319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C157A477290219F600CD5319 /* Build configuration list for PBXNativeTarget "SalahTimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C157A478290219F600CD5319 /* Debug */,
+				C157A479290219F600CD5319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C157A48C29021BEC00CD5319 /* Build configuration list for PBXNativeTarget "ios-compose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C157A48D29021BEC00CD5319 /* Debug */,
+				C157A48E29021BEC00CD5319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

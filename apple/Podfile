@@ -3,3 +3,19 @@ target 'ios' do
   platform :ios, '14.1'
   pod 'shared', :path => '../shared'
 end
+
+target 'osx' do
+  platform :osx, '12.6'
+  pod 'shared', :path => '../shared'
+end
+
+target 'SalahTimes Watch App' do
+  platform :watchos, '9.0'
+  pod 'shared', :path => '../shared'
+end
+
+target 'ios-compose' do
+  use_frameworks!
+  platform :ios, '14.1'
+  pod 'renderer', :path => '../renderer'
+end
