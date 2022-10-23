@@ -12,17 +12,22 @@ This is a sample PrayerTimes App with shared business logic, initially written f
 
 It uses the `kotlin_multiplatform` branch of [adhan](https://github.com/batoulapps/adhan-java/tree/kotlin_multiplatform) for shared PrayerTime calculation logic.
 
-It was later modified to support more platforms as part of a talk, given in Arabic, at Droidcon Egypt in 2022.
+It was later modified to support more platforms as part of a talk, given in Arabic, at Droidcon Egypt in 2022. I am hoping to re-do this in English in the near future, at which point I'll update the links here as well.
 
 
 ## Features
 
 * shared business logic between all platforms
-* implementation for Android (using Jetpack Compose)
-* implementation for iOS (using SwiftUI)
-* implementation for desktop (using Jetpack Compose JVM)
-* implementation for macOS
-* implementation for watchOS
+* shared rendering layer for Compose between Android, JVM Desktop, and iOS
+
+### Specific Implementations
+* Android (using Jetpack)
+* iOS (using SwiftUI)
+* iOS (using Compose)
+* desktop JVM (using Compose)
+* web (using Compose)
+* macOS
+* watchOS
 * implementation for command line (macOS, Linux, and Windows (untested)).
 
 
@@ -33,3 +38,33 @@ It was later modified to support more platforms as part of a talk, given in Arab
 
 On Android, open in Android Studio (Arctic Fox or above).
 On iOS, open the xcworkspace file in Xcode.
+
+## Running
+
+- for web-compose: `./gradlew jsBrowserRun`
+- for desktop-compose (jvm): `./gradlew :desktop:run`
+- for Apple (iOS, macOS, watchOS) - in Xcode, choose the target and then run
+
+### Command Line App
+
+#### macOS (arm64)
+
+```bash
+# Build the application
+./gradlew macosArm64Binaries
+
+# Run it
+./shared/build/bin/macosArm64/releaseExecutable/shared.kexe "Dubai"
+```
+
+#### Linux
+
+For Linux, you need the Curl library's development headers. On Ubuntu, for example, you can run `apt install libcurl4-openssl-dev` (note that you need a modern version of Curl, example 7.85.0-1).
+
+```bash
+# Build the application
+./gradlew nonNativeAppleBinaries
+
+# Run it
+./shared/build/bin/nonAppleNative/releaseExecutable/shared.kexe "Dubai"
+```
