@@ -15,6 +15,6 @@ fun main() = application {
     title = "PrayerTimes for Desktop",
     state = rememberWindowState(width = 300.dp, height = 300.dp)
   ) {
-    PrayerTimesWrapperProvider.providePrayerTimesWrapper(prayerTimesRepository)
+    PrayerTimesWrapperProvider.providePrayerTimesWrapper(prayerTimesRepository).invoke()
   }
 }
