@@ -2,7 +2,7 @@ plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
   id("com.android.library")
-  id("org.jetbrains.compose") version "1.2.0"
+  id("org.jetbrains.compose") version "1.2.1"
 }
 
 version = "1.0"
