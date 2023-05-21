@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
+
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
@@ -150,3 +152,6 @@ configurations.named("podReleaseFrameworkMacosArm64").configure {
     attribute(customAttribute, "release")
   }
 }
+
+// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9.
+rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"

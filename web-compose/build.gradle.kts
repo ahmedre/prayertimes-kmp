@@ -5,16 +5,23 @@ plugins {
 
 kotlin {
   js(IR) {
+    moduleName = "web-compose"
     browser()
     binaries.executable()
   }
   sourceSets {
     val jsMain by getting {
       dependencies {
-        implementation(compose.web.core)
+        implementation(compose.ui)
         implementation(compose.runtime)
+        implementation(compose.foundation)
         implementation(project(":shared"))
+        implementation(project(":renderer"))
       }
     }
   }
+}
+
+compose.experimental {
+  web.application {}
 }

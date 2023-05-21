@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
+
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
@@ -10,6 +12,10 @@ version = "1.0"
 kotlin {
   jvm()
   android()
+
+  js(IR) {
+    browser()
+  }
 
   ios()
   iosSimulatorArm64()
@@ -67,3 +73,6 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
   }
 }
+
+// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9.
+rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"
