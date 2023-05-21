@@ -6,6 +6,8 @@ plugins {
 val composeCompilerVersion = "1.4.6"
 
 android {
+  namespace = "app.salah.android"
+
   compileSdk = 33
   defaultConfig {
     applicationId = "app.salah.android"
@@ -28,9 +30,18 @@ android {
   }
 
   kotlinOptions {
-    jvmTarget = "1.8"
+    jvmTarget = "17"
     freeCompilerArgs = freeCompilerArgs + "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
   }
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+  }
+}
+
+kotlin {
+  jvmToolchain(17)
 }
 
 dependencies {

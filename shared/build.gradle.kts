@@ -128,3 +128,25 @@ kotlin {
       project.rootDir.resolve("web-compose/kotlin-js-store")
   }
 }
+
+// Required until Kotlin 1.9.x - see https://youtrack.jetbrains.com/issue/KT-55751.
+val customAttribute = Attribute.of("bugFixAttribute", String::class.java)
+
+configurations.named("podDebugFrameworkOsxFat").configure {
+  attributes {
+    // put a unique attribute
+    attribute(customAttribute, "fat")
+  }
+}
+
+configurations.named("podDebugFrameworkMacosArm64").configure {
+  attributes {
+    attribute(customAttribute, "debug")
+  }
+}
+
+configurations.named("podReleaseFrameworkMacosArm64").configure {
+  attributes {
+    attribute(customAttribute, "release")
+  }
+}
