@@ -1,7 +1,7 @@
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
-  kotlin("plugin.serialization") version "1.7.20"
+  kotlin("plugin.serialization") version "1.8.20"
 }
 
 version = "1.0"
@@ -34,13 +34,18 @@ kotlin {
   cocoapods {
     summary = "Some description for the Shared Module"
     homepage = "Link to the Shared Module homepage"
+
+    framework {
+      isStatic = true
+    }
   }
 
-  val ktorVersion = "2.1.1"
+  val ktorVersion = "2.3.0"
   sourceSets {
     val commonMain by getting {
       dependencies {
         implementation("com.batoulapps.adhan:adhan2:0.0.4")
+        // blocked on https://youtrack.jetbrains.com/issue/KTOR-5728
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
