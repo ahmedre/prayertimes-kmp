@@ -2,7 +2,7 @@ plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
   id("com.android.library")
-  id("org.jetbrains.compose") version "1.2.1"
+  id("org.jetbrains.compose") version "1.4.0"
 }
 
 version = "1.0"
@@ -17,6 +17,10 @@ kotlin {
   cocoapods {
     summary = "Some description for the Renderer Module"
     homepage = "Link to the Renderer Module homepage"
+
+    framework {
+      isStatic = true
+    }
   }
 
   // disable checks due to compose iOS issues with LLVM in the current version

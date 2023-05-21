@@ -3,8 +3,7 @@ plugins {
   kotlin("android")
 }
 
-val composeVersion = "1.2.1"
-val composeCompilerVersion = "1.3.2"
+val composeCompilerVersion = "1.4.6"
 
 android {
   compileSdk = 33
@@ -37,17 +36,18 @@ android {
 dependencies {
   implementation(project(":shared"))
   implementation(project(":renderer"))
-  implementation("androidx.appcompat:appcompat:1.5.1")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+  implementation("androidx.appcompat:appcompat:1.6.1")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
   // jetpack compose
-  implementation("androidx.activity:activity-compose:1.6.1")
-  implementation("androidx.compose.runtime:runtime:$composeVersion")
-  implementation("androidx.compose.ui:ui:$composeVersion")
-  implementation("androidx.compose.foundation:foundation-layout:$composeVersion")
-  implementation("androidx.compose.material:material:$composeVersion")
-  implementation("androidx.compose.foundation:foundation:$composeVersion")
-  implementation("androidx.compose.animation:animation:$composeVersion")
-  implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+  implementation(platform("androidx.compose:compose-bom:2023.05.01"))
+  implementation("androidx.activity:activity-compose:1.7.1")
+  implementation("androidx.compose.runtime:runtime")
+  implementation("androidx.compose.ui:ui")
+  implementation("androidx.compose.foundation:foundation-layout")
+  implementation("androidx.compose.material:material")
+  implementation("androidx.compose.foundation:foundation")
+  implementation("androidx.compose.animation:animation")
+  implementation("androidx.compose.ui:ui-tooling")
 }
