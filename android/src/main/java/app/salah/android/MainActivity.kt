@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import app.salah.data.PrayerTimesRepository
-import app.salah.view.PrayerTimesWrapperProvider
+import app.salah.view.PrayerTimesWrapper
 
 class MainActivity : AppCompatActivity() {
   private val prayerTimesRepository = PrayerTimesRepository()
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
 
     setContent {
-      PrayerTimesWrapperProvider.providePrayerTimesWrapper(prayerTimesRepository).invoke()
+      PrayerTimesWrapper(prayerTimesRepository)
     }
   }
 }

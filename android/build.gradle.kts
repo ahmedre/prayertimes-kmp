@@ -3,16 +3,16 @@ plugins {
   kotlin("android")
 }
 
-val composeCompilerVersion = "1.4.6"
+val composeCompilerVersion = "1.5.3"
 
 android {
   namespace = "app.salah.android"
 
-  compileSdk = 33
+  compileSdk = 34
   defaultConfig {
     applicationId = "app.salah.android"
     minSdk = 21
-    targetSdk = 33
+    targetSdk = 34
     versionCode = 1
     versionName = "1.0"
   }
@@ -48,12 +48,12 @@ dependencies {
   implementation(project(":shared"))
   implementation(project(":renderer"))
   implementation("androidx.appcompat:appcompat:1.6.1")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
   // jetpack compose
-  implementation(platform("androidx.compose:compose-bom:2023.05.01"))
-  implementation("androidx.activity:activity-compose:1.7.1")
+  implementation(platform("androidx.compose:compose-bom:2023.09.00"))
+  implementation("androidx.activity:activity-compose:1.7.2")
   implementation("androidx.compose.runtime:runtime")
   implementation("androidx.compose.ui:ui")
   implementation("androidx.compose.foundation:foundation-layout")

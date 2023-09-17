@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import app.salah.data.PrayerTimesRepository
 
 @Composable
-internal fun PrayerTimesWrapper(prayerTimesRepository: PrayerTimesRepository, modifier: Modifier) {
+fun PrayerTimesWrapper(prayerTimesRepository: PrayerTimesRepository, modifier: Modifier = Modifier) {
   MaterialTheme {
     val prayerTimesState = prayerTimesRepository.prayerTimesFlow.collectAsState()
 
@@ -19,14 +19,5 @@ internal fun PrayerTimesWrapper(prayerTimesRepository: PrayerTimesRepository, mo
         PrayerTimesView(salahTimes = prayerTimes)
       }
     }
-  }
-}
-
-object PrayerTimesWrapperProvider {
-  fun providePrayerTimesWrapper(
-    prayerTimesRepository: PrayerTimesRepository,
-    modifier: Modifier = Modifier
-  ): (@Composable () -> Unit) = {
-    PrayerTimesWrapper(prayerTimesRepository, modifier)
   }
 }
