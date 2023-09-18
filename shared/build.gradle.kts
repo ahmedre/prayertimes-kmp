@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
-  kotlin("plugin.serialization") version "1.8.20"
+  kotlin("plugin.serialization") version "1.9.10"
 }
 
 version = "1.0"
@@ -42,13 +42,13 @@ kotlin {
     }
   }
 
-  val ktorVersion = "2.3.0"
+  val ktorVersion = "2.3.4"
   sourceSets {
     val commonMain by getting {
       dependencies {
         implementation("com.batoulapps.adhan:adhan2:0.0.4")
         // blocked on https://youtrack.jetbrains.com/issue/KTOR-5728
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
@@ -130,28 +130,3 @@ kotlin {
       project.rootDir.resolve("web-compose/kotlin-js-store")
   }
 }
-
-// Required until Kotlin 1.9.x - see https://youtrack.jetbrains.com/issue/KT-55751.
-val customAttribute = Attribute.of("bugFixAttribute", String::class.java)
-
-configurations.named("podDebugFrameworkOsxFat").configure {
-  attributes {
-    // put a unique attribute
-    attribute(customAttribute, "fat")
-  }
-}
-
-configurations.named("podDebugFrameworkMacosArm64").configure {
-  attributes {
-    attribute(customAttribute, "debug")
-  }
-}
-
-configurations.named("podReleaseFrameworkMacosArm64").configure {
-  attributes {
-    attribute(customAttribute, "release")
-  }
-}
-
-// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9.
-rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"

@@ -19,7 +19,7 @@ import androidx.compose.ui.text.input.ImeAction
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-internal fun SearchBar(onLocationChanged: (String) -> Unit) {
+fun SearchBar(onLocationChanged: (String) -> Unit) {
   val textState = remember { mutableStateOf("") }
   TextField(
     value = textState.value,
