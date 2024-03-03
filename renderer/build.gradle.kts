@@ -1,15 +1,15 @@
-import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
-
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
   id("com.android.library")
-  id("org.jetbrains.compose") version "1.5.1"
+  id("org.jetbrains.compose") version "1.6.0"
 }
 
 version = "1.0"
 
 kotlin {
+  applyDefaultHierarchyTemplate()
+
   jvm()
   androidTarget()
 
@@ -17,7 +17,8 @@ kotlin {
     browser()
   }
 
-  ios()
+  iosX64()
+  iosArm64()
   iosSimulatorArm64()
 
   cocoapods {
@@ -53,9 +54,6 @@ kotlin {
         implementation(kotlin("test-annotations-common"))
       }
     }
-
-    val iosMain by getting
-    val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
   }
 }
 
