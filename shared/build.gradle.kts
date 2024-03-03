@@ -1,14 +1,14 @@
-import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
-
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
-  kotlin("plugin.serialization") version "1.9.10"
+  kotlin("plugin.serialization") version "1.9.22"
 }
 
 version = "1.0"
 
 kotlin {
+  applyDefaultHierarchyTemplate()
+
   jvm()
 
   js(IR) {
@@ -16,7 +16,8 @@ kotlin {
     browser()
   }
 
-  ios()
+  iosX64()
+  iosArm64()
   iosSimulatorArm64()
 
   val hostOs = System.getProperty("os.name")
@@ -30,7 +31,8 @@ kotlin {
 
   nativeTarget?.binaries?.executable { entryPoint = "main" }
 
-  watchos()
+  watchosArm32()
+  watchosArm64()
   watchosSimulatorArm64()
 
   cocoapods {
@@ -42,13 +44,13 @@ kotlin {
     }
   }
 
-  val ktorVersion = "2.3.4"
+  val ktorVersion = "2.3.8"
   sourceSets {
     val commonMain by getting {
       dependencies {
-        implementation("com.batoulapps.adhan:adhan2:0.0.4")
+        implementation("com.batoulapps.adhan:adhan2:0.0.5")
         // blocked on https://youtrack.jetbrains.com/issue/KTOR-5728
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
@@ -85,19 +87,12 @@ kotlin {
       }
     }
 
-    val nativeMain by creating {
-      dependsOn(commonMain)
-    }
+    val nativeMain by getting
 
-    val appleMain by creating {
-      dependsOn(nativeMain)
+    val appleMain by getting {
       dependencies {
         implementation("io.ktor:ktor-client-darwin:$ktorVersion")
       }
-    }
-
-    val appleTest by creating {
-      dependsOn(commonTest)
     }
 
     if (isNonApple) {
@@ -107,21 +102,7 @@ kotlin {
           implementation("io.ktor:ktor-client-curl:$ktorVersion")
         }
       }
-    } else {
-      val macosArm64Main by getting { dependsOn(appleMain) }
-      val macosArm64Test by getting { dependsOn(appleTest) }
     }
-
-    val iosMain by getting { dependsOn(appleMain) }
-    val iosTest by getting { dependsOn(appleTest) }
-
-    val iosSimulatorArm64Main by getting { dependsOn(appleMain) }
-    val iosSimulatorArm64Test by getting { dependsOn(appleTest) }
-
-    val watchosMain by getting { dependsOn(appleMain) }
-    val watchosTest by getting { dependsOn(appleTest) }
-    val watchosSimulatorArm64Main by getting { dependsOn(appleMain) }
-    val watchosSimulatorArm64Test by getting { dependsOn(appleTest) }
   }
 
   // move kotlin-js-store directory under web-compose so it's not on the top level
