@@ -22,6 +22,10 @@ Pod::Spec.new do |spec|
         Alternatively, proper pod installation is performed during Gradle sync in the IDE (if Podfile location is set)"
     end
                 
+    spec.xcconfig = {
+        'ENABLE_USER_SCRIPT_SANDBOXING' => 'NO',
+    }
+                
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':renderer',
         'PRODUCT_MODULE_NAME' => 'renderer',
@@ -46,5 +50,5 @@ Pod::Spec.new do |spec|
             SCRIPT
         }
     ]
-    spec.resources = ['build/compose/ios/renderer/compose-resources']
+    spec.resources = ['build/compose/cocoapods/compose-resources']
 end

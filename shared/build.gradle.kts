@@ -1,7 +1,7 @@
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
-  kotlin("plugin.serialization") version "1.9.22"
+  kotlin("plugin.serialization") version "2.1.0"
 }
 
 version = "1.0"
@@ -44,13 +44,12 @@ kotlin {
     }
   }
 
-  val ktorVersion = "2.3.8"
+  val ktorVersion = "3.0.1"
   sourceSets {
     val commonMain by getting {
       dependencies {
         implementation("com.batoulapps.adhan:adhan2:0.0.5")
-        // blocked on https://youtrack.jetbrains.com/issue/KTOR-5728
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
@@ -82,7 +81,7 @@ kotlin {
 
     val jsMain by getting {
       dependencies {
-        implementation(npm("@js-joda/timezone", "2.3.0"))
+        implementation(npm("@js-joda/timezone", "2.21.1"))
         implementation("io.ktor:ktor-client-js:$ktorVersion")
       }
     }

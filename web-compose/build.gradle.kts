@@ -1,6 +1,7 @@
 plugins {
   kotlin("multiplatform")
-  id("org.jetbrains.compose") version "1.6.0"
+  id("org.jetbrains.compose") version "1.7.1"
+  id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
 }
 
 kotlin {
@@ -20,8 +21,4 @@ kotlin {
       }
     }
   }
-}
-
-compose.experimental {
-  web.application {}
 }

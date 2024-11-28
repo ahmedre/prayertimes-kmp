@@ -1,8 +1,11 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
   id("com.android.library")
-  id("org.jetbrains.compose") version "1.6.0"
+  id("org.jetbrains.compose") version "1.7.1"
+  id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
 }
 
 version = "1.0"
@@ -11,7 +14,11 @@ kotlin {
   applyDefaultHierarchyTemplate()
 
   jvm()
-  androidTarget()
+  androidTarget {
+    compilerOptions {
+      jvmTarget.set(JvmTarget.JVM_17)
+    }
+  }
 
   js(IR) {
     browser()
@@ -58,7 +65,7 @@ kotlin {
 }
 
 android {
-  compileSdk = 34
+  compileSdk = 35
   defaultConfig {
     minSdk = 21
   }
