@@ -1,11 +1,12 @@
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
   id("com.android.library")
-  id("org.jetbrains.compose") version "1.7.1"
-  id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
+  id("org.jetbrains.compose") version "1.9.0"
+  id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
 version = "1.0"
@@ -21,6 +22,11 @@ kotlin {
   }
 
   js(IR) {
+    browser()
+  }
+
+  @OptIn(ExperimentalWasmDsl::class)
+  wasmJs {
     browser()
   }
 
@@ -45,27 +51,23 @@ kotlin {
   }
 
   sourceSets {
-    val commonMain by getting {
-      dependencies {
-        implementation(compose.ui)
-        implementation(compose.runtime)
-        implementation(compose.foundation)
-        implementation(compose.material)
-        implementation(project(":shared"))
-      }
+    commonMain.dependencies {
+      implementation(compose.ui)
+      implementation(compose.runtime)
+      implementation(compose.foundation)
+      implementation(compose.material)
+      implementation(project(":shared"))
     }
 
-    val commonTest by getting {
-      dependencies {
-        implementation(kotlin("test-common"))
-        implementation(kotlin("test-annotations-common"))
-      }
+    commonTest.dependencies {
+      implementation(kotlin("test-common"))
+      implementation(kotlin("test-annotations-common"))
     }
   }
 }
 
 android {
-  compileSdk = 35
+  compileSdk = 36
   defaultConfig {
     minSdk = 21
   }

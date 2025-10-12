@@ -1,5 +1,5 @@
 import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.compose.ui.window.CanvasBasedWindow
+import androidx.compose.ui.window.ComposeViewport
 import app.salah.data.PrayerTimesRepository
 import app.salah.view.PrayerTimesWrapper
 import org.jetbrains.skiko.wasm.onWasmReady
@@ -8,8 +8,8 @@ import org.jetbrains.skiko.wasm.onWasmReady
 fun main() {
   val prayerTimesRepository = PrayerTimesRepository()
   onWasmReady {
-    CanvasBasedWindow("PrayerTimes") {
-      PrayerTimesWrapper(prayerTimesRepository)
-    }
+    ComposeViewport(content = {
+          PrayerTimesWrapper(prayerTimesRepository)
+    })
   }
 }

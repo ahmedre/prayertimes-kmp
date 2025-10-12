@@ -2,12 +2,12 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
   kotlin("multiplatform")
-  id("org.jetbrains.compose") version "1.7.1"
-  id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
+  id("org.jetbrains.compose") version "1.9.0"
+  id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
 kotlin {
-  jvm { withJava() }
+  jvm()
 
   sourceSets {
     named("jvmMain") {
@@ -15,8 +15,8 @@ kotlin {
         implementation(project(":shared"))
         implementation(project(":renderer"))
         implementation(compose.desktop.currentOs)
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.9.0")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.10.2")
       }
     }
   }

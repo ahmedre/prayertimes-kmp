@@ -9,11 +9,11 @@ import com.batoulapps.adhan2.Coordinates
 import com.batoulapps.adhan2.Madhab
 import com.batoulapps.adhan2.PrayerTimes
 import com.batoulapps.adhan2.data.DateComponents
-import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
+import kotlin.time.Clock
+import kotlin.time.Instant
 
 class SalahCalculator {
   private val dateFormatter = PlatformDateFormatter()

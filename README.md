@@ -41,7 +41,8 @@ On iOS, open the xcworkspace file in Xcode.
 
 ## Running
 
-- for web-compose: `./gradlew jsBrowserRun`
+- for web-compose: `./gradlew jsBrowserDevelopmentRun`
+- for wasm web-compose: `./gradlew wasmJsBrowserDevelopmentRun`
 - for desktop-compose (jvm): `./gradlew :desktop:run`
 - for Apple (iOS, macOS, watchOS) - in Xcode, choose the target and then run
 

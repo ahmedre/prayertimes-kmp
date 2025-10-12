@@ -1,8 +1,8 @@
 package app.salah
 
-import kotlinx.datetime.Instant
 import kotlinx.datetime.toNSDate
 import platform.Foundation.NSDateFormatter
+import kotlin.time.Instant
 
 actual class PlatformDateFormatter actual constructor() {
   private val dateFormatter = NSDateFormatter().apply { dateFormat = "hh:mm a" }

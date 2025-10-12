@@ -1,24 +1,30 @@
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+
 plugins {
   kotlin("multiplatform")
-  id("org.jetbrains.compose") version "1.7.1"
-  id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
+  id("org.jetbrains.compose") version "1.9.0"
+  id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
 kotlin {
   js(IR) {
-    moduleName = "web-compose"
     browser()
     binaries.executable()
   }
+
+  @OptIn(ExperimentalWasmDsl::class)
+  wasmJs {
+    browser()
+    binaries.executable()
+  }
+
   sourceSets {
-    val jsMain by getting {
-      dependencies {
-        implementation(compose.ui)
-        implementation(compose.runtime)
-        implementation(compose.foundation)
-        implementation(project(":shared"))
-        implementation(project(":renderer"))
-      }
+    webMain.dependencies {
+      implementation(compose.ui)
+      implementation(compose.runtime)
+      implementation(compose.foundation)
+      implementation(project(":shared"))
+      implementation(project(":renderer"))
     }
   }
 }
