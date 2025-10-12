@@ -1,8 +1,8 @@
 package app.salah
 
-import kotlinx.datetime.Instant
 import java.text.SimpleDateFormat
 import java.util.Date
+import kotlin.time.Instant
 
 actual class PlatformDateFormatter actual constructor() {
   private val dateFormatter = SimpleDateFormat.getTimeInstance(SimpleDateFormat.SHORT)

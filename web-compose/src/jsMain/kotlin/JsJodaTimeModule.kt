@@ -2,4 +2,6 @@
 @JsNonModule
 external object JsJodaTimeZoneModule
 
-private val jsJodaTz = JsJodaTimeZoneModule
+@OptIn(ExperimentalJsExport::class)
+@JsExport
+val jsJodaTz = JsJodaTimeZoneModule

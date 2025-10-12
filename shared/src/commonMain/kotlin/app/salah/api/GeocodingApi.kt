@@ -6,7 +6,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 
 class GeocodingApi(private val httpClient: HttpClient, private val apiKey: String) {
   private val baseUrl = "https://maps.googleapis.com/maps/api/geocode/json"

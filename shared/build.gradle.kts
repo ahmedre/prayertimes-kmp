@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+
 plugins {
   kotlin("multiplatform")
   kotlin("native.cocoapods")
-  kotlin("plugin.serialization") version "2.1.0"
+  kotlin("plugin.serialization") version "2.2.20"
 }
 
 version = "1.0"
@@ -13,6 +15,11 @@ kotlin {
 
   js(IR) {
     useCommonJs()
+    browser()
+  }
+
+  @OptIn(ExperimentalWasmDsl::class)
+  wasmJs {
     browser()
   }
 
@@ -44,54 +51,53 @@ kotlin {
     }
   }
 
-  val ktorVersion = "3.0.1"
+  compilerOptions {
+    optIn.add("kotlin.time.ExperimentalTime")
+  }
+
+  val ktorVersion = "3.3.1"
   sourceSets {
-    val commonMain by getting {
-      dependencies {
-        implementation("com.batoulapps.adhan:adhan2:0.0.5")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    commonMain.dependencies {
+        implementation("com.batoulapps.adhan:adhan2:0.0.6")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
         implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
         implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
         implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
-      }
     }
 
-    val commonTest by getting {
-      dependencies {
-        implementation(kotlin("test-common"))
-        implementation(kotlin("test-annotations-common"))
-      }
+    commonTest.dependencies {
+      implementation(kotlin("test-common"))
+      implementation(kotlin("test-annotations-common"))
     }
 
-    val jvmMain by getting {
-      dependencies {
-        implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
-      }
+    jvmMain.dependencies {
+      implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
     }
 
-    val jvmTest by getting {
-      dependencies {
-        implementation(kotlin("test-junit"))
-        implementation("junit:junit:4.13.2")
-      }
+    jvmTest.dependencies {
+      implementation(kotlin("test-junit"))
+      implementation("junit:junit:4.13.2")
     }
 
-    val jsMain by getting {
-      dependencies {
-        implementation(npm("@js-joda/timezone", "2.21.1"))
-        implementation("io.ktor:ktor-client-js:$ktorVersion")
-      }
+    webMain.dependencies {
+      implementation(npm("@js-joda/timezone", "2.21.1"))
+    }
+
+    jsMain.dependencies {
+      implementation("io.ktor:ktor-client-js:$ktorVersion")
+    }
+
+    wasmJsMain.dependencies {
+      implementation("io.ktor:ktor-client-cio:$ktorVersion")
     }
 
     val nativeMain by getting
 
-    val appleMain by getting {
-      dependencies {
-        implementation("io.ktor:ktor-client-darwin:$ktorVersion")
-      }
+    appleMain.dependencies {
+      implementation("io.ktor:ktor-client-darwin:$ktorVersion")
     }
 
     if (isNonApple) {

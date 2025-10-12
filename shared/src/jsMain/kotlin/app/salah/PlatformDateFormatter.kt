@@ -1,7 +1,7 @@
 package app.salah
 
-import kotlinx.datetime.Instant
-import kotlinx.datetime.toJSDate
+import kotlin.time.Instant
+import kotlin.time.toJSDate
 
 actual class PlatformDateFormatter actual constructor() {
   actual fun formatDate(instant: Instant): String {
