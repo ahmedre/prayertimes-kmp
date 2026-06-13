@@ -2,11 +2,11 @@ import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-  kotlin("multiplatform")
-  kotlin("native.cocoapods")
-  id("com.android.library")
-  id("org.jetbrains.compose") version "1.9.0"
-  id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
+  alias(libs.plugins.kotlin.multiplatform)
+  alias(libs.plugins.kotlin.cocoapods)
+  alias(libs.plugins.android.library)
+  alias(libs.plugins.compose.multiplatform)
+  alias(libs.plugins.kotlin.compose)
 }
 
 version = "1.0"
@@ -67,9 +67,9 @@ kotlin {
 }
 
 android {
-  compileSdk = 36
+  compileSdk = libs.versions.compileSdk.get().toInt()
   defaultConfig {
-    minSdk = 21
+    minSdk = libs.versions.minSdk.get().toInt()
   }
 
   namespace = "app.salah.renderer"

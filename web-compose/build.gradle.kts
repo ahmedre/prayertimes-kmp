@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-  kotlin("multiplatform")
-  id("org.jetbrains.compose") version "1.9.0"
-  id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
+  alias(libs.plugins.kotlin.multiplatform)
+  alias(libs.plugins.compose.multiplatform)
+  alias(libs.plugins.kotlin.compose)
 }
 
 kotlin {

@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-  kotlin("multiplatform")
-  kotlin("native.cocoapods")
-  kotlin("plugin.serialization") version "2.2.20"
+  alias(libs.plugins.kotlin.multiplatform)
+  alias(libs.plugins.kotlin.cocoapods)
+  alias(libs.plugins.kotlin.serialization)
 }
 
 version = "1.0"
@@ -55,17 +55,15 @@ kotlin {
     optIn.add("kotlin.time.ExperimentalTime")
   }
 
-  val ktorVersion = "3.3.1"
   sourceSets {
     commonMain.dependencies {
-        implementation("com.batoulapps.adhan:adhan2:0.0.6")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-        implementation("io.ktor:ktor-client-core:$ktorVersion")
-        implementation("io.ktor:ktor-client-json:$ktorVersion")
-        implementation("io.ktor:ktor-client-serialization:$ktorVersion")
-        implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
-        implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-        implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+      implementation(libs.adhan)
+      implementation(libs.kotlinx.coroutines.core)
+      implementation(libs.ktor.client.core)
+      implementation(libs.ktor.client.json)
+      implementation(libs.ktor.client.serialization)
+      implementation(libs.ktor.client.content.negotiation)
+      implementation(libs.ktor.serialization.kotlinx.json)
     }
 
     commonTest.dependencies {
@@ -74,37 +72,37 @@ kotlin {
     }
 
     jvmMain.dependencies {
-      implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
+      implementation(libs.ktor.client.okhttp)
     }
 
     jvmTest.dependencies {
       implementation(kotlin("test-junit"))
-      implementation("junit:junit:4.13.2")
+      implementation(libs.junit)
     }
 
     webMain.dependencies {
-      implementation(npm("@js-joda/timezone", "2.21.1"))
+      implementation(npm("@js-joda/timezone", libs.versions.timezone.get()))
     }
 
     jsMain.dependencies {
-      implementation("io.ktor:ktor-client-js:$ktorVersion")
+      implementation(libs.ktor.client.js)
     }
 
     wasmJsMain.dependencies {
-      implementation("io.ktor:ktor-client-cio:$ktorVersion")
+      implementation(libs.ktor.client.cio)
     }
 
     val nativeMain by getting
 
     appleMain.dependencies {
-      implementation("io.ktor:ktor-client-darwin:$ktorVersion")
+      implementation(libs.ktor.client.darwin)
     }
 
     if (isNonApple) {
       val nonAppleNativeMain by getting {
         dependsOn(nativeMain)
         dependencies {
-          implementation("io.ktor:ktor-client-curl:$ktorVersion")
+          implementation(libs.ktor.client.curl)
         }
       }
     }
