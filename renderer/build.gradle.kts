@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
   alias(libs.plugins.kotlin.cocoapods)
-  alias(libs.plugins.android.library)
+  alias(libs.plugins.android.kmp.library)
   alias(libs.plugins.compose.multiplatform)
   alias(libs.plugins.kotlin.compose)
 }
@@ -15,13 +15,17 @@ kotlin {
   applyDefaultHierarchyTemplate()
 
   jvm()
-  androidTarget {
+  android {
+    namespace = "app.salah.renderer"
+    compileSdk = libs.versions.compileSdk.get().toInt()
+    minSdk = libs.versions.minSdk.get().toInt()
+
     compilerOptions {
       jvmTarget.set(JvmTarget.JVM_17)
     }
   }
 
-  js(IR) {
+  js {
     browser()
   }
 
@@ -30,7 +34,6 @@ kotlin {
     browser()
   }
 
-  iosX64()
   iosArm64()
   iosSimulatorArm64()
 
@@ -52,10 +55,10 @@ kotlin {
 
   sourceSets {
     commonMain.dependencies {
-      implementation(compose.ui)
-      implementation(compose.runtime)
-      implementation(compose.foundation)
-      implementation(compose.material)
+      implementation(libs.compose.ui)
+      implementation(libs.compose.runtime)
+      implementation(libs.compose.foundation)
+      implementation(libs.compose.material)
       implementation(project(":shared"))
     }
 
@@ -63,19 +66,5 @@ kotlin {
       implementation(kotlin("test-common"))
       implementation(kotlin("test-annotations-common"))
     }
-  }
-}
-
-android {
-  compileSdk = libs.versions.compileSdk.get().toInt()
-  defaultConfig {
-    minSdk = libs.versions.minSdk.get().toInt()
-  }
-
-  namespace = "app.salah.renderer"
-
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
   }
 }

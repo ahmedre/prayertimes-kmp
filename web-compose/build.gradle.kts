@@ -20,9 +20,9 @@ kotlin {
 
   sourceSets {
     webMain.dependencies {
-      implementation(compose.ui)
-      implementation(compose.runtime)
-      implementation(compose.foundation)
+      implementation(libs.compose.ui)
+      implementation(libs.compose.runtime)
+      implementation(libs.compose.foundation)
       implementation(project(":shared"))
       implementation(project(":renderer"))
     }

@@ -1,21 +1,21 @@
 target 'ios' do
   use_frameworks!
-  platform :ios, '14.1'
+  platform :ios, '17.0'
   pod 'shared', :path => '../shared'
 end
 
 target 'osx' do
-  platform :osx, '12.6'
+  platform :osx, '14.0'
   pod 'shared', :path => '../shared'
 end
 
 target 'SalahTimes Watch App' do
-  platform :watchos, '9.0'
+  platform :watchos, '10.0'
   pod 'shared', :path => '../shared'
 end
 
 target 'ios-compose' do
   use_frameworks!
-  platform :ios, '14.1'
+  platform :ios, '17.0'
   pod 'renderer', :path => '../renderer'
 end

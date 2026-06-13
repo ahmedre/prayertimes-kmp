@@ -33,7 +33,7 @@ fun SearchBar(onLocationChanged: (String) -> Unit) {
     modifier = Modifier
         .onPreviewKeyEvent { keyEvent ->
             if (keyEvent.key.keyCode == Key.Enter.keyCode) {
-                if (keyEvent.type == KeyEventType.KeyUp) {
+                if (keyEvent.type == KeyEventType.KeyDown) {
                     onLocationChanged(textState.value)
                 }
                 true

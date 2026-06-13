@@ -10,6 +10,7 @@ import com.batoulapps.adhan2.Madhab
 import com.batoulapps.adhan2.PrayerTimes
 import com.batoulapps.adhan2.data.DateComponents
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.number
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 import kotlin.time.Clock
@@ -26,7 +27,7 @@ class SalahCalculator {
     val coordinates = Coordinates(location.latitude, location.longitude)
 
     val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
-    val dateComponents = DateComponents(now.year, now.monthNumber, now.dayOfMonth)
+    val dateComponents = DateComponents(now.year, now.month.number, now.day)
 
     val calculationMethod = calculationParameters(location.countryCode)
     val prayerTimes = PrayerTimes(coordinates, dateComponents, calculationMethod)
