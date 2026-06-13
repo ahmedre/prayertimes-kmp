@@ -1,17 +1,17 @@
 plugins {
-  id("com.android.application")
-  kotlin("android")
-  id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.kotlin.android)
+  alias(libs.plugins.kotlin.compose)
 }
 
 android {
   namespace = "app.salah.android"
 
-  compileSdk = 36
+  compileSdk = libs.versions.compileSdk.get().toInt()
   defaultConfig {
     applicationId = "app.salah.android"
-    minSdk = 21
-    targetSdk = 36
+    minSdk = libs.versions.minSdk.get().toInt()
+    targetSdk = libs.versions.targetSdk.get().toInt()
     versionCode = 1
     versionName = "1.0"
   }
@@ -42,18 +42,18 @@ kotlin {
 dependencies {
   implementation(project(":shared"))
   implementation(project(":renderer"))
-  implementation("androidx.appcompat:appcompat:1.7.1")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+  implementation(libs.androidx.appcompat)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(libs.kotlinx.coroutines.android)
 
   // jetpack compose
-  implementation(platform("androidx.compose:compose-bom:2025.10.00"))
-  implementation("androidx.activity:activity-compose:1.11.0")
-  implementation("androidx.compose.runtime:runtime")
-  implementation("androidx.compose.ui:ui")
-  implementation("androidx.compose.foundation:foundation-layout")
-  implementation("androidx.compose.material:material")
-  implementation("androidx.compose.foundation:foundation")
-  implementation("androidx.compose.animation:animation")
-  implementation("androidx.compose.ui:ui-tooling")
+  implementation(platform(libs.androidx.compose.bom))
+  implementation(libs.androidx.activity.compose)
+  implementation(libs.androidx.compose.runtime)
+  implementation(libs.androidx.compose.ui)
+  implementation(libs.androidx.compose.foundation.layout)
+  implementation(libs.androidx.compose.material)
+  implementation(libs.androidx.compose.foundation)
+  implementation(libs.androidx.compose.animation)
+  implementation(libs.androidx.compose.ui.tooling)
 }
