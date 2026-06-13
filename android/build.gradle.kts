@@ -1,6 +1,7 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
   alias(libs.plugins.android.application)
-  alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.compose)
 }
 
@@ -24,11 +25,6 @@ android {
 
   buildFeatures.compose = true
 
-  kotlinOptions {
-    jvmTarget = "17"
-    freeCompilerArgs = freeCompilerArgs + "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
-  }
-
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
@@ -37,6 +33,11 @@ android {
 
 kotlin {
   jvmToolchain(17)
+
+  compilerOptions {
+    jvmTarget.set(JvmTarget.JVM_17)
+    optIn.add("androidx.compose.ui.ExperimentalComposeUiApi")
+  }
 }
 
 dependencies {

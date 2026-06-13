@@ -13,7 +13,7 @@ kotlin {
 
   jvm()
 
-  js(IR) {
+  js {
     useCommonJs()
     browser()
   }
@@ -23,7 +23,6 @@ kotlin {
     browser()
   }
 
-  iosX64()
   iosArm64()
   iosSimulatorArm64()
 
@@ -49,10 +48,14 @@ kotlin {
     framework {
       isStatic = true
     }
+
+    ios.deploymentTarget = "17.0"
+    watchos.deploymentTarget = "10.0"
+    osx.deploymentTarget = "14.0"
   }
 
   compilerOptions {
-    optIn.add("kotlin.time.ExperimentalTime")
+    freeCompilerArgs.add("-Xexpect-actual-classes")
   }
 
   sourceSets {
@@ -81,16 +84,13 @@ kotlin {
     }
 
     webMain.dependencies {
+      implementation(libs.ktor.client.js)
       implementation(npm("@js-joda/timezone", libs.versions.timezone.get()))
     }
 
-    jsMain.dependencies {
-      implementation(libs.ktor.client.js)
-    }
+    jsMain.dependencies { }
 
-    wasmJsMain.dependencies {
-      implementation(libs.ktor.client.cio)
-    }
+    wasmJsMain.dependencies { }
 
     val nativeMain by getting
 
