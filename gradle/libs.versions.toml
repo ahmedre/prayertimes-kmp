@@ -1,6 +1,6 @@
 [versions]
 activityCompose = "1.13.0"
-adhan = "0.0.6"
+adhan = "0.0.7"
 agp = "9.2.1"
 androidxAppcompat = "1.7.1"
 composeBom = "2026.05.01"
